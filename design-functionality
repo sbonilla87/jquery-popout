@@ -1,0 +1,29 @@
+app.controller('FeedbackTabController', function () {
+
+  // Invoke strict mode
+  "use strict";
+
+  // Opens feedback modal
+  $(".btn-float").click(function () {
+    $(".feedback-modal").show("fold", 500);
+  });
+
+  // Closes feedback modal when close is clicked
+  $(".close").click(function () {
+    $(".feedback-modal").hide("fold", 500);
+    $(".form-control").val('');
+  });
+
+  // When submit clicked switches to confirmation
+  $(".btn-feedback").click(function () {
+    $(".feedback-modal").hide("clip", 500);
+    $(".feedback-modal-conf").show("clip", 500);
+    $(".form-control").val('');
+  });
+
+  // Closes confirmation of feedback sent modal
+  $(".close, .confirmation-close").click(function () {
+    $(".feedback-modal-conf").hide("fold", 500);
+  });
+
+});
